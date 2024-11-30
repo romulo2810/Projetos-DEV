@@ -1,0 +1,138 @@
+/* Reset geral */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+}
+
+/* Contêiner principal */
+.container {
+    background: url('img/4k-laptop-yn553k4gdhpc4hlh.jpg') no-repeat;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+    z-index: 0;
+}
+
+.content {
+    position: relative;
+    max-width: 700px;
+    padding: 2rem;
+    z-index: 1;
+    background-color: rgba(107, 105, 105, 0.9); /* Fundo semi-transparente */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content h1 {
+    color: rgba(237, 241, 0, 0.836);
+    font-family: "Dancing Script", 'Cursive';
+    font-size: 3.5rem;
+    margin-bottom: 0.8rem;}
+.content h2 {
+    color: rgba(237, 241, 0, 0.836);
+    font-family: "Dancing Script", 'Cursive';
+    font-size: 3.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.content p {
+    color: rgb(215, 218, 95);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+/* Botões */
+.btn {
+    padding: 0.75rem 1.25rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 550;
+    font-size: 1.1rem;
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    background-color: #b3b3b3;
+    display: inline-block;
+    margin-top: 0.8rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.btn:hover {
+    opacity: 0.6;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 1;
+}
+
+label {
+    font-weight: 600;
+    color: #ffffff;
+    text-align: left;
+}
+
+input[type="date"] {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+input[type="date"]:focus {
+    border-color: rgba(237, 241, 0, 0.836);
+}
+
+button {
+    padding: 0.75rem 1.25rem;
+    background: linear-gradient(135deg, #ffffff, #3f3f3f);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #c9c9c9, #bfdb56);
+    transform: scale(1.05);
+}
+
+/* Área de resultado */
+#result {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}

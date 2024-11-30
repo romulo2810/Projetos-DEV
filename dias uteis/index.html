@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Dias Úteis</title>
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link para as fontes externas -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Contêiner principal com papel de parede -->
+    <div class="container">
+        <!-- Conteúdo do formulário -->
+        <div class="content">
+            <h2>Calculadora de Dias Úteis</h2>
+            <p>Insira as datas para calcular os dias úteis entre elas.</p>
+            <!-- Formulário -->
+            <form id="workdays-form">
+                <label for="start-date">Data de Início <span style="color: red;">*</span>:</label>
+                <input type="date" id="start-date" required>
+                
+                <label for="end-date">Data de Fim <span style="color: red;">*</span>:</label>
+                <input type="date" id="end-date" required>
+                
+                <button type="button" class="btn" onclick="calculateWorkdays()">Calcular</button>
+            </form>
+            <!-- Área de exibição do resultado -->
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <!-- Link para o arquivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
