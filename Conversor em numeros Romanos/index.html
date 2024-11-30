@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Números Romanos</title>
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="style/style.css">
+    <!-- Importação da fonte Roboto do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="container before"></div>
+        <div class="content">
+            <h2>Conversor em Números Romanos</h2>
+            <p>Digite um número inteiro entre 1 e 3999 e clique em "Converter" para ver sua representação em números romanos.</p>
+            <!-- Campo para o usuário digitar um número -->
+            <label for="numero" id="label-numero">Digite um número inteiro (1-3999):</label>
+            <input type="number" id="numero" min="1" max="3999">
+            <!-- Botão que inicia a conversão quando clicado -->
+            <button class="btn" onclick="converterParaRomano()">Converter</button>
+            <!-- Área onde o resultado será exibido -->
+            <div id="resultado" class="resultado"></div>
+        </div>
+    </div>
+
+    <script>
+        // Função para converter o número para o formato romano
+        function converterParaRomano() {
+            // Pega o número digitado pelo usuário e transforma em um número inteiro
+            const num = parseInt(document.getElementById('numero').value);
+
+            // Pega a área onde o resultado será mostrado
+            const resultadoDiv = document.getElementById('resultado');
+
+            // Verifica se o número está dentro do intervalo válido (1 a 3999)
+            if (isNaN(num) || num < 1 || num > 3999) {
+                resultadoDiv.textContent = 'Por favor, somente números entre 1 e 3999.';
+                return; // Sai da função se o número não for válido
+            }
+
+            // Lista de valores e símbolos romanos
+            const valoresRomanos = [
+                { valor: 1000, simbolo: 'M' },
+                { valor: 900, simbolo: 'CM' },
+                { valor: 500, simbolo: 'D' },
+                { valor: 400, simbolo: 'CD' },
+                { valor: 100, simbolo: 'C' },
+                { valor: 90, simbolo: 'XC' },
+                { valor: 50, simbolo: 'L' },
+                { valor: 40, simbolo: 'XL' },
+                { valor: 10, simbolo: 'X' },
+                { valor: 9, simbolo: 'IX' },
+                { valor: 5, simbolo: 'V' },
+                { valor: 4, simbolo: 'IV' },
+                { valor: 1, simbolo: 'I' }
+            ];
+
+            // Inicializa uma string vazia para armazenar o resultado
+            let resultado = '';
+            let numero = num;
+
+            // Percorre cada valor romano da maior para a menor
+            for (const { valor, simbolo } of valoresRomanos) {
+                // Enquanto o número for maior ou igual ao valor atual
+                while (numero >= valor) {
+                    resultado += simbolo; // Adiciona o símbolo romano ao resultado
+                    numero -= valor;     // Subtrai o valor do número
+                }
+            }
+
+            // Exibe o número romano resultante na área de resultado
+            resultadoDiv.textContent = `Número Romano: ${resultado}`;
+        }
+
+        // Função para detectar o pressionamento da tecla Enter
+        function verificarEnter(event) {
+            if (event.key === 'Enter') { // Verifica se a tecla pressionada é Enter
+                converterParaRomano(); // Chama a função de conversão
+            }
+        }
+
+        // Adiciona um ouvinte de evento ao campo de entrada para detectar o pressionamento de teclas
+        document.getElementById('numero').addEventListener('keydown', verificarEnter);
+    </script>
+</body>
+</html>
+

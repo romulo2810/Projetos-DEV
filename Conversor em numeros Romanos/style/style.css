@@ -1,0 +1,105 @@
+/* Estilo de todos os elementos */
+* {
+    padding: 0; /* Remove o preenchimento interno de todos os elementos */
+    margin: 0; /* Remove a margem externa de todos os elementos */
+    box-sizing: border-box; /* Inclui a borda e o preenchimento no cálculo da largura e altura dos elementos */
+}
+
+/* Estilo da page */
+body {
+    font-family: 'Roboto', sans-serif; /* Define a fonte padrão para o texto como Roboto */
+    overflow: hidden; /* Evita que a página tenha barras de rolagem (útil se você não quer que o conteúdo exceda a tela) */
+}
+
+/* Estilo da área principal de conteúdo */
+.container {
+    background: url("..//img/vista-do-antigo-guerreiro-masculino-do-imperio-romano_23-2150912835.avif") no-repeat; /* Define a imagem de fundo e evita que a imagem se repita */
+    position: relative; /* Define a posição relativa para permitir posicionamento absoluto de elementos internos */
+    height: 100vh; /* Define a altura da área como 100% da altura da viewport (tela) */
+    width: 100vw; /* Define a largura da área como 100% da largura da viewport (tela) */
+    background-size: cover; /* Faz com que a imagem de fundo cubra toda a área, mantendo suas proporções */
+    background-position: 50% 36%; /* Alinha a imagem de fundo ao centro horizontalmente e 36% da altura verticalmente */
+    display: flex; /* Usa o modelo de layout Flexbox para alinhas os elementos internos */
+    flex-direction: column; /* Alinha os elementos internos em uma coluna */
+    justify-content: center; /* Centraliza verticalmente os elementos internos */
+    align-items: center; /* Centraliza horizontalmente os elementos internos */
+    text-align: center; /* Alinha o texto centralmente dentro da área */
+}
+
+/* Camada de sobreposição escura sobre a imagem de fundo */
+.container.before {
+    content: ''; /* Cria um elemento vazio */
+    position: absolute; /* Posiciona o elemento de forma absoluta em relação ao seu pai (a área .container) */
+    top: 0; /* Posiciona o elemento no topo do seu pai */
+    left: 0; /* Posiciona o elemento à esquerda do seu pai */
+    width: 100%; /* Define a largura do elemento para 100% da largura do pai */
+    height: 100%; /* Define a altura do elemento para 100% da altura do pai */
+    background-color: rgba(0, 0, 0, 0.7); /* Adiciona um fundo preto semi-transparente (70% opaco) para escurecer a imagem */
+}
+
+/* Estilo do contêiner de conteúdo */
+.content {
+    position: relative; /* Define a posição relativa para o conteúdo dentro deste elemento */
+    max-width: 700px; /* Define a largura máxima do conteúdo como 700 pixels */
+    padding: 2rem; /* Adiciona um preenchimento interno de 2 rem (unidade de medida relativa ao tamanho da fonte) */
+    z-index: 1; /* Define a ordem de empilhamento (para garantir que o conteúdo apareça acima da sobreposição) */
+    background-color: rgba(88, 88, 88, 0.5); /* Define a cor de fundo como cinza escuro semi-transparente (50% opaco) */
+    border-radius: 10px; /* Arredonda os cantos do fundo com um raio de 10 pixels */
+}
+
+/* Estilo do título dentro do contêiner de conteúdo */
+.content h2 {
+    color: rgba(237, 241, 0, 0.836); /* Define a cor do texto como amarelo com uma leve transparência */
+    font-family: 'Roboto', sans-serif; /* Define a fonte do título como Dancing Script (fonte cursiva) */
+    font-size: 3.5rem; /* Define o tamanho da fonte como 3.5 rem */
+    margin-bottom: 0.8rem; /* Adiciona uma margem inferior de 0.8 rem */
+}
+
+/* Estilo do parágrafo dentro do contêiner de conteúdo */
+.content p {
+    color: rgb(255, 255, 255); /* Define a cor do texto*/
+    font-size: 1.5rem; /* Define o tamanho da fonte como 1.5 rem */
+    font-weight: 100; /* Define o peso da fonte como fino */
+}
+
+/* Estilo do rótulo (label) com o texto "Digite um número inteiro (1-3999):" */
+#label-numero {
+    color: rgba(237, 241, 0, 0.836);; /* Define a cor do texto */
+    font-size: 1.2rem; /* Define o tamanho da fonte como 1.2 rem */
+    margin-bottom: 0.5rem; /* Adiciona uma margem inferior de 0.5 rem */
+}
+
+/* Estilo da área onde o resultado é exibido */
+.resultado {
+    color: rgba(237, 241, 0, 0.836);; /* Define a cor do texto */
+    font-size: 1.5rem; /* Define o tamanho da fonte como 1.5 rem */
+    font-weight: bold; /* Define o peso da fonte como negrito */
+}
+
+/* Estilo dos botões */
+.btn {
+    padding: 0.75rem 1.25rem; /* Adiciona um preenchimento interno de 0.75 rem em cima e embaixo e 1.25 rem nas laterais */
+    text-transform: uppercase; /* Converte o texto para maiúsculas */
+    color: white; /* Define a cor do texto como branco */
+    font-weight: 550; /* Define o peso da fonte como um pouco mais grosso que normal */
+    font-size: 1.1rem; /* Define o tamanho da fonte como 1.1 rem */
+    font-family: 'Roboto', sans-serif; /* Define a fonte do texto como Roboto */
+    text-decoration: none; /* Remove qualquer sublinhado ou decoração do texto */
+    background-color: #b3b3b3; /* Define a cor de fundo como cinza claro */
+    display: inline-block; /* Faz com que o botão se comporte como um bloco inline (ajustando sua largura conforme necessário) */
+    margin-top: 0.8rem; /* Adiciona uma margem superior de 0.8 rem */
+    cursor: pointer; /* Muda o cursor para uma mão ao passar sobre o botão */
+    transition: 0.3s; /* Define a duração da transição para 0.3 segundos para efeitos como mudança de opacidade */
+}
+
+/* Estilo para o botão ao passar o mouse sobre ele */
+.btn:hover {
+    opacity: 0.6; /* Define a opacidade do botão como 60% quando o mouse passa sobre ele */
+}
+
+/* Estilo dos campos de entrada e botões */
+input, button {
+    margin: 10px 0; /* Adiciona uma margem de 10 pixels acima e abaixo dos campos */
+    padding: 8px; /* Adiciona um preenchimento interno de 8 pixels */
+}
+
